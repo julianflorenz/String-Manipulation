@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 // Custom implementation of strlen
-int customStrlen(const char str[]) {
+int cusStrlen(char str[]) {
     int length = 0;
     while (str[length] != '\0') {
         length++;
