@@ -1,13 +1,22 @@
 #include "falcone_stringman.h"
-#include <string.h>
+#include <stdio.h>
 
-// Used to reversing a string
+// Custom implementation of strlen
+int customStrlen(const char str[]) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+}
+
+// Used to reverse a string
 void reverseString(char str[]) {
-    int length = strlen(str);
+    int length = cusStrlen(str);
     int i;
     char temp;
 
-    // Swaps character from both beginning and ends of the string
+    // Swaps characters from both beginning and ends of the string
     for (i = 0; i < length / 2; i++) {
         temp = str[i];
         str[i] = str[length - i - 1];
@@ -15,7 +24,7 @@ void reverseString(char str[]) {
     }
 }
 
-// Used to converting the given string to uppercase
+// Used to convert the given string to uppercase
 void toUppercase(char str[]) {
     int i = 0;
     while (str[i] != '\0') {
@@ -26,7 +35,7 @@ void toUppercase(char str[]) {
     }
 }
 
-// Used to converting the given string to lowercase
+// Used to convert the given string to lowercase
 void toLowercase(char str[]) {
     int i = 0;
     while (str[i] != '\0') {
@@ -39,9 +48,5 @@ void toLowercase(char str[]) {
 
 // Solves the calculation in the length of a string
 int stringLength(char str[]) {
-    int length = 0;
-    while (str[length] != '\0') {
-        length++;
-    }
-    return length;
+    return customStrlen(str);
 }
